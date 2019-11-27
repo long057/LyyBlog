@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>LongYY个人博客</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/guest_book.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/axios/0.19.0-beta.1/axios.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./index.html">博客导航</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li><a href="./index.html">首页</a></li>
+                <li><a href="./about.html?blogId=-1">关于</a></li>
+                <li class="active"><a href="./guest_book.html?blogId=-2">留言 <span class="sr-only">(current)</span></a></li>
+<!--                <li><a href="./site_map.html">地图</a></li>-->
+            </ul>
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="输入关键词查找">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+</nav>
+<div class="container-fluid content_container">
+    <div class="container">
+        <div class="row">
+            <div class="content_left col-md-8">
+                <div class="description_wrap">
+                    <div class="description">
+                        <p>关于注水，别看我长时间不发博，博主可一直都在线~</p>
+                        <p class="red">友链只交换技术类个人博客，本博客稳定在线，所以也需要你的站尽量稳定。</p>
+                        <p class="red">不要皮，谢谢</p>
+                    </div>
+
+                </div>
+                <div class="comment_list_wrap" id="comment_list_wrap">
+                    <h4>留言：目前有{{commentCount}}条留言</h4>
+                    <div class="comment_item"
+                         v-for="comment in commentList">
+                        <p class="comment_info">
+                            <b>{{comment.user_name}}</b>：{{comment.options}} 发表于 {{comment.ctime}}
+                            <a href="#send_comments"
+                               @click="reply(comment.id, comment.user_name)">[回复]</a>
+                        </p>
+                        <div class="comment_item_content">{{comment.comment}}</div>
+                    </div>
+
+                </div>
+                <div class="send_comments" id="send_comments">
+                    <h4 class="comment_header">发表评论</h4>
+                    <div>
+                        <input type="hidden" class="comment_reply" value="-1">
+                        <input type="hidden" class="comment_reply_name" value="0">
+                        <input type="text" placeholder="昵称" class="comment_name">
+                        <input type="text" class="comment_email" placeholder="请输入邮箱回复时会发送邮件通知您">
+                    </div>
+                    <textarea class="comment_content" id="" cols="30" rows="10"></textarea>
+                    <input type="text" class="comment_code" placeholder="请输入验证码">
+                    <span v-html="vcode" @click="changeCode()"></span>
+                    <button class="submit" @click="addComment" >提交</button>
+                </div>
+            </div>
+            <div class="content_right col-md-4 pull-right" >
+                <div class="right_module">
+                    <div class="random_tags" id="random_tags">
+                        <div class="title">随机标签云</div>
+                        <div class="content">
+                            <a  v-for="tag in tagList"
+                                :key="tag.id"
+                                :href="tag.link"
+                                :style="{
+                                        color: randomColor(),
+                                        fontSize: randomFontSize()
+                                        }"
+                            >{{tag.tag}}</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_module">
+                    <div class="new_hots" id="new_hots">
+                        <div class="title">最近热门</div>
+                        <div class="content">
+                            <ul>
+                                <li v-for="hot in hotList"><a :href="hot.link">{{hot.title}}</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_module">
+                    <div class="new_comments" id="new_comments">
+                        <div class="title">最新评论</div>
+                        <div class="content">
+                            <ul>
+                                <li v-for="comment in commentList" :key="comment.id">
+                                    <div class="comment_title">
+                                        <span>{{comment.user_name}}</span>
+                                        <span class="pull-right">{{comment.ctime}}</span>
+                                    </div>
+                                    <div class="comment_content"><a :href="comment.link">{{comment.comment}}</a></div>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<footer class="footer navbar-inverse navbar-fixed-bottom">
+    <div class="container">
+        <p>Copyright © 2019 Lyy个人博客 All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="./js/base.js"></script>
+<script src="./js/guest_book.js"></script>
+</body>
+</html>

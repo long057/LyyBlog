@@ -1,0 +1,35 @@
+
+html, body, h1, h2, h3, h4, h5, ul, li {
+    padding: 0px;
+    margin: 0px;
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+
+.edit_container h3 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.edit_container .edit_author,
+.edit_container .btn_toolbar,
+.edit_container .editor,
+.edit_container .check_code input{
+    margin-bottom: 10px;
+}
+.edit_container .edit_author input{
+    width: 500px;
+}
+.edit_container .check_code input {
+    width: 250px;
+    text-align: left;
+}
+
+.edit_container .editor textarea {
+    width: 600px;
+    height: 100px;
+    resize: both;
+    overflow: hidden;
+}

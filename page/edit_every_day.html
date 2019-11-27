@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./css/edit_every_day.css">
+</head>
+<body>
+<div class="container edit_container">
+    <h3>每日一句编辑</h3>
+    <div class="edit_author" >
+        <div class="input-group">
+            <span class="input-group-addon" id="sizing-addon1">标题</span>
+            <input type="text" class="form-control author" placeholder="请输入作者" aria-describedby="sizing-addon1">
+        </div>
+    </div>
+
+    <div class="btn_toolbar">
+        <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="glyphicon glyphicon-text-size"></span>
+                <b class="caret"></b>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">12</a></li>
+                <li><a href="#">16</a></li>
+                <li><a href="#">20</a></li>
+                <li><a href="#">24</a></li>
+            </ul>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-text-color"></span>
+                <b class="caret"></b>
+            </button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-bold"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-italic"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-left"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-center"></span></button>
+            <button type="button" class="btn btn-default"><span class="glyphicon glyphicon-align-right"></span></button>
+        </div>
+        <div class="btn-group">
+            <input type="file" class="btn btn-default">
+        </div>
+    </div>
+    <div class="editor">
+        <textarea name="" id="" cols="30" rows="10" class="edit_content_en" placeholder="请输入英文"></textarea>
+        <textarea name="" id="" cols="30" rows="10" class="edit_content_zh" placeholder="请输入中文"></textarea>
+    </div>
+    <div class="check_code">
+        <input type="text" placeholder="请输入验证码" class="btn btn-default code" >
+    </div>
+    <button class="btn btn-default submit">提交</button>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+<script src="./js/edit_every_day.js"></script>
+</body>
+</html>

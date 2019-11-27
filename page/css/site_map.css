@@ -1,0 +1,45 @@
+
+.content {
+    width: 90%;
+    padding: 10px;
+    margin-top: 60px;
+    margin-bottom: 80px;
+}
+.content h2 {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+}
+.content .title {
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.content .title a {
+    color: dodgerblue;
+}
+.content #article_title_list {
+    width: 100%;
+    padding-left: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+.content #article_title_list span {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0px;
+    display: block;
+}
+.content #article_title_list li {
+    width: 60%;
+    list-style-type: numeric;
+    margin-left: 20px;
+    padding: 10px 0px;
+    border-bottom: 1px dashed #efefef;
+}
+.content .page_tool {
+    text-align: left;
+}

@@ -1,0 +1,201 @@
+html, body, h1, h2, h3, h4, ul, li{
+    padding: 0px;
+    margin: 0px;
+}
+html, body {
+    width: 100%;
+    font-size: 14px;
+}
+li {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+    color: #424242;
+}
+.red {
+    color: red;
+}
+
+.content_container {
+    width: 100%;
+    margin-top: 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.content_left {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 15px;
+}
+
+.footer {
+    width: 100%;
+    color: darkgray;
+    text-align: center;
+}
+.footer p {
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 0px;
+}
+
+.page_tool {
+    width: 100%;
+    text-align: center;
+}
+.page_tool ul li {
+    display: inline-block;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    color: #5f5f5f;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+.page_tool ul li:hover,
+.page_tool ul li.nowPage{
+    color: whitesmoke;
+    background-color: #5f5f5f;
+}
+.content_right {
+    border: 1px solid yellow;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.content_right .right_module {
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    color: white;
+    padding: 10px 15px;
+}
+.content_right .right_module .title {
+    width: 100%;
+    color: dodgerblue;
+    font-size: 16px;
+    padding: 5px 0px 5px 0px;
+    border-bottom: 1px solid #292929;
+}
+.content_right .right_module .content a{
+    display: inline-block;
+    padding: 0px 5px;
+    color: white;
+    font-size: 14px;
+}
+.content_right .right_module .new_hots >  .title {
+    color: greenyellow;
+}
+.content_right .right_module .content li {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 1px solid #292929;
+}
+.content_right .right_module .content li a:hover {
+    color: dodgerblue;
+    text-decoration: none;
+}
+.content_right .right_module .new_comments .content li {
+    height: 55px;
+}
+.right_module .new_comments .content li .comment_title {
+    padding: 0px;
+    height: 25px;
+    line-height: 25px;
+}
+.right_module .new_comments .content li .comment_content {
+    padding: 0px;
+    height: 25px;
+    line-height: 25px;
+}
+.right_module .new_comments .content li .comment_content a {
+    color: #5f5f5f;
+    padding: 0px;
+}
+.right_module .new_comments .content li .comment_content a:hover {
+    color: #337ab7;
+}
+
+.send_comments {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+    box-shadow: 1px 1px 5px #5f5f5f;
+    padding: 19px;
+    margin-bottom: 100px;
+}
+.send_comments .comment_header {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.send_comments input {
+    width: 300px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+.send_comments textarea {
+    width: 500px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.send_comments button {
+    display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #ccc;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+.send_comments button:hover {
+    background-color: #5f5f5f;
+}
+.comment_list_wrap {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+.comment_list_wrap h4 {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.comment_list_wrap .comment_item {
+    border: 1px dashed dodgerblue;
+    padding: 5px;
+    margin-bottom: 5px;
+    background-color: #d9edf7;
+    color: dodgerblue;
+
+}
+.comment_list_wrap .comment_item .comment_info {
+    margin-bottom: 0px;
+}
+.comment_list_wrap .comment_item .comment_info a {
+    color: blue;
+}
+.comment_list_wrap .comment_item .comment_content {
+    padding: 5px;
+}
+.comment_list_wrap span {
+    cursor: pointer;
+}
