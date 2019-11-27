@@ -1,0 +1,28 @@
+{
+  "name": "lyyblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/long057/LyyBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/long057/LyyBlog/issues"
+  },
+  "homepage": "https://github.com/long057/LyyBlog#readme",
+  "dependencies": {
+    "bootstrap": "^3.4.1",
+    "bootstrap-wysiwyg": "^2.0.1",
+    "express": "^4.17.1",
+    "mysql": "^2.17.1"
+  },
+  "devDependencies": {
+    "svg-captcha": "^1.4.0"
+  }
+}
