@@ -19,7 +19,7 @@
   "dependencies": {
     "bootstrap": "^3.4.1",
     "bootstrap-wysiwyg": "^2.0.1",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "mysql": "^2.17.1"
   },
   "devDependencies": {
